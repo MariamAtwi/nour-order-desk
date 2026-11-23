@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nour's Order Desk
 
-## Getting Started
+**Full Name:** Mariam Atwy
+**Project branch:** assignment-4-nour-order-desk
 
-First, run the development server:
+## Project Overview
+
+Nour's Order Desk is a web-based order management application designed to help a small candle business organize and manage customer orders.
+
+The application provides a central dashboard where Nour can create orders, view order details, update quantities and statuses, and delete unwanted orders.
+
+It combines a responsive user interface with a REST API that handles order operations and enforces business rules on the server.
+
+## Technologies Used
+
+- **Next.js** – React framework and API Route Handlers.
+- **React** – Component-based user interface.
+- **TypeScript** – Type safety.
+- **Tailwind CSS** – Styling and responsive layouts.
+- **REST API** – Communication between the frontend and backend.
+- **Thunder Client** – API endpoint testing.
+
+### Installation
+
+```bash
+git clone https://github.com/MariamAtwi/nour-order-desk
+```
+
+```bash
+cd nour-order-desk
+```
+
+```bash
+npm install
+```
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Data Storage and Limitations
 
-To learn more about Next.js, take a look at the following resources:
+This assignment uses a shared server-side in-memory store for order data.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- All API Route Handlers access the same shared store.
+- Orders are available while the relevant server process retains the data.
+- Data is not stored in a database.
+- Orders can reset after a server restart or development reload.
+- In-memory storage is not suitable for production or multiple server instances.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Documentation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [PLAN.md](docs/PLAN.md)
+- [API.md](docs/API.md)
+- [TESTING.md](docs/TESTING.md)
+- [REVIEW.md](docs/REVIEW.md)
+- [Evidence](docs/evidence/)
+- [screenshots](docs/screenshots)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Validation Before Submission
+
+Run the available project checks:
+
+```bash
+npm run lint
+npm run build
+```
