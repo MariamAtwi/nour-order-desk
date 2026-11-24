@@ -63,11 +63,11 @@ Screenshots of the API requests and responses are stored in:
 - Buttons, inputs, and dropdowns work on mobile.
 - No unwanted horizontal page overflow.
 
-**Screenshot evidence:** [View Mobile Screenshot](screenshots/mobile-view-iphone.png)
+**Screenshot evidence:** [View Mobile Screenshot](screenshots/mobile-viewport.png)
 
 ## Scripts
 
-when we ran `npm run lint` for the first time, ESLint reported an error related to the react-hooks/set-state-in-effect rule. The reason was that fetchOrders() was called directly inside useEffect, and this function updates React state using setOrders(), setError(), and setLoading(). These updates trigger React re-renders, and the lint rule discourages synchronous state updates directly inside an effect.
+when we ran `npm run lint` for the first time, ESLint reported an error related to the react-hooks/set-state-in-effect rule. The reason was that fetchOrders() was called directly inside useEffect, and this function updates React state using setOrders(), setError(), and setLoading(). These updates trigger React re-renders, and the lint rule discourages synchronous state updates directly inside an effect.To fix the issue we used Promise.resolve().then() to schedule the call to fetchOrders() after the synchronous effect body finishes. We ran npm run lint again, and it passed without errors or warnings.
 
 I ran `npm run build` to verify that the application was ready for production and The production build completed successfully with no errors.
 
